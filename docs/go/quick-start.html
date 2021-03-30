@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quick Start with CLI | Counter API</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <meta name="description" content="Documentation of Counter API">
+    <meta property="og:site_name" content="Counter API">
+    <meta property="og:title" content="Quick Start with CLI">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/go/quick-start.html">
+    <meta name="twitter:title" content="Quick Start with CLI">
+    <meta name="twitter:url" content="/go/quick-start.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="theme-color" content="#0842ba">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.ecc2ff24.css" as="style"><link rel="preload" href="/assets/js/app.994c6f76.js" as="script"><link rel="preload" href="/assets/js/2.78121830.js" as="script"><link rel="preload" href="/assets/js/15.bf80f385.js" as="script"><link rel="prefetch" href="/assets/js/10.a4b68c57.js"><link rel="prefetch" href="/assets/js/11.48395346.js"><link rel="prefetch" href="/assets/js/12.c32f36d8.js"><link rel="prefetch" href="/assets/js/13.e4342e3c.js"><link rel="prefetch" href="/assets/js/14.e06c8217.js"><link rel="prefetch" href="/assets/js/16.596d2eb6.js"><link rel="prefetch" href="/assets/js/17.4992d420.js"><link rel="prefetch" href="/assets/js/18.87041d4e.js"><link rel="prefetch" href="/assets/js/19.4d835969.js"><link rel="prefetch" href="/assets/js/20.7955b80d.js"><link rel="prefetch" href="/assets/js/21.87a14817.js"><link rel="prefetch" href="/assets/js/22.fdf6aab5.js"><link rel="prefetch" href="/assets/js/23.a6e8bed6.js"><link rel="prefetch" href="/assets/js/3.833f15f8.js"><link rel="prefetch" href="/assets/js/4.fccd148e.js"><link rel="prefetch" href="/assets/js/5.a29209fc.js"><link rel="prefetch" href="/assets/js/6.8d55b7ae.js"><link rel="prefetch" href="/assets/js/7.7f243f26.js"><link rel="prefetch" href="/assets/js/8.b9714936.js"><link rel="prefetch" href="/assets/js/9.307ea3cb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ecc2ff24.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/counterapi-logo.svg" alt="Counter API" class="logo"> <span class="site-name can-hide">Counter API</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/api/" class="nav-link">
+  API
+</a></div> <a href="https://github.com/counterapi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/api/" class="nav-link">
+  API
+</a></div> <a href="https://github.com/counterapi" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/guide/" class="sidebar-heading clickable"><span>Guide</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" class="sidebar-link">Introduction</a></li><li><a href="/guide/get-started.html" class="sidebar-link">Get Started</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/javascript/" class="sidebar-heading clickable"><span>Javascript</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/javascript/" class="sidebar-link">Introduction</a></li><li><a href="/javascript/get-started.html" class="sidebar-link">Get Started</a></li><li><a href="/javascript/quick-start.html" class="sidebar-link">Quick Start</a></li><li><a href="/javascript/counter-name-hashing.html" class="sidebar-link">Counter Name Hashing</a></li><li><a href="/javascript/count-list.html" class="sidebar-link">Count List</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/go/" class="sidebar-heading clickable router-link-active open"><span>Go</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/go/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/go/get-started.html" class="sidebar-link">Get Started</a></li><li><a href="/go/quick-start.html" aria-current="page" class="active sidebar-link">Quick Start with CLI</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/go/quick-start.html#count-up" class="sidebar-link">Count Up</a></li><li class="sidebar-sub-header"><a href="/go/quick-start.html#count-down" class="sidebar-link">Count Down</a></li><li class="sidebar-sub-header"><a href="/go/quick-start.html#set-count" class="sidebar-link">Set Count</a></li><li class="sidebar-sub-header"><a href="/go/quick-start.html#get-counter" class="sidebar-link">Get Counter</a></li></ul></li><li><a href="/go/counter-name.html" class="sidebar-link">Counter Name</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/api/" class="sidebar-heading clickable"><span>API</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/api/" class="sidebar-link">Introduction</a></li><li><a href="/api/rate-limit.html" class="sidebar-link">Rate Limit</a></li><li><a href="/api/endpoints.html" class="sidebar-link">Endpoints</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="quick-start-with-cli"><a href="#quick-start-with-cli" class="header-anchor">#</a> Quick Start with CLI</h1> <p>Count API CLI is a standalone tool which enables you to count up/down, get counter information or list history of the
+counter.</p> <br>
+It does not require authentication or login.
+<div class="language-shell extra-class"><pre class="language-shell"><code>CLI <span class="token builtin class-name">command</span> to counter things
+
+Usage:
+  counter <span class="token punctuation">[</span>command<span class="token punctuation">]</span>
+
+Available Commands:
+  counts      Fetches counts of counter
+  down        Count down <span class="token keyword">for</span> given name
+  get         Fetches counter information
+  <span class="token builtin class-name">help</span>        Help about any <span class="token builtin class-name">command</span>
+  <span class="token builtin class-name">set</span>         Sets counter
+  up          Count up <span class="token keyword">for</span> given name
+  version     Print the version/build number
+
+Flags:
+  -h, --help   <span class="token builtin class-name">help</span> <span class="token keyword">for</span> counter
+
+Use <span class="token string">&quot;counter [command] --help&quot;</span> <span class="token keyword">for</span> <span class="token function">more</span> information about a command.
+</code></pre></div><h2 id="count-up"><a href="#count-up" class="header-anchor">#</a> Count Up</h2> <p>You can count up with given name. The name of the counter is unique. Do not forget that anyone with same name can count
+up or down.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>❯ counter up --name MyCounter01                  
+<span class="token punctuation">{</span>
+        <span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span> <span class="token number">12</span>,
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;MyCounter01&quot;</span>,
+        <span class="token string">&quot;count&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1</span>,
+        <span class="token string">&quot;created_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.450461117Z&quot;</span>,
+        <span class="token string">&quot;updated_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.466029457Z&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="count-down"><a href="#count-down" class="header-anchor">#</a> Count Down</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>❯ counter down --name MyCounter01
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span> <span class="token number">12</span>,
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;MyCounter01&quot;</span>,
+    <span class="token string">&quot;count&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;created_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.450461117Z&quot;</span>,
+    <span class="token string">&quot;updated_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.466029457Z&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="set-count"><a href="#set-count" class="header-anchor">#</a> Set Count</h2> <p>You can set your counter to with <code>set</code> function.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>❯ counter <span class="token builtin class-name">set</span> --name MyCounter01 --count <span class="token number">10</span>
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span> <span class="token number">12</span>,
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;MyCounter01&quot;</span>,
+    <span class="token string">&quot;count&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>,
+    <span class="token string">&quot;created_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.450461117Z&quot;</span>,
+    <span class="token string">&quot;updated_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.466029457Z&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="get-counter"><a href="#get-counter" class="header-anchor">#</a> Get Counter</h2> <p>After counting up/down, you can get the final status of your counter with <code>get</code> function.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>❯ counter get --name MyCounter01
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;id&quot;</span><span class="token builtin class-name">:</span> <span class="token number">12</span>,
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;MyCounter01&quot;</span>,
+    <span class="token string">&quot;count&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;created_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.450461117Z&quot;</span>,
+    <span class="token string">&quot;updated_at&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2021-03-28T21:19:09.466029457Z&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/go/get-started.html" class="prev">
+        Get Started
+      </a></span> <span class="next"><a href="/go/counter-name.html">
+        Counter Name
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.994c6f76.js" defer></script><script src="/assets/js/2.78121830.js" defer></script><script src="/assets/js/15.bf80f385.js" defer></script>
+  </body>
+</html>
