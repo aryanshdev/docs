@@ -1,4 +1,5 @@
 const { description } = require("../../package");
+const path = require("path");
 
 module.exports = {
   lang: "en-US",
@@ -51,12 +52,16 @@ module.exports = {
   dest: "docs",
   themeConfig: {
     repo: "https://github.com/counterapi",
-    editLinks: false,
+    editLinks: true,
     docsDir: "",
     editLinkText: "",
     lastUpdated: false,
     logo: "/img/counterapi-logo.svg",
     author: "omegion",
+    contributors: false,
+    themePlugins: {
+      git: false
+    },
     navbar: [
       {
         text: "Guide",
@@ -140,5 +145,6 @@ module.exports = {
         $page.frontmatter.date && new Date($page.frontmatter.date),
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
     }
-  ]
+  ],
+  clientAppEnhanceFiles: path.resolve(__dirname, "./clientAppEnhance.ts")
 };

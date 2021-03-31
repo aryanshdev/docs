@@ -1,6 +1,7 @@
 <template>
   <section>
     <div class="columns is-multiline">
+      <a href="#" @click="run">asdASD</a>
       <!--      <div class="column is-12">-->
       <!--        <b-button-->
       <!--          :loading="loading"-->
@@ -9,10 +10,10 @@
       <!--          >Run →-->
       <!--        </b-button>-->
       <!--      </div>-->
-      <!--      <div v-if="result" class="column is-12 pt-0">-->
-      <!--        <p class="subtitle mb-0">Result</p>-->
-      <!--        <pre class="has-background-white-ter">{{ result }}</pre>-->
-      <!--      </div>-->
+      <div v-if="result" class="column is-12 pt-0">
+        <p class="subtitle mb-0">Result</p>
+        <pre class="has-background-white-ter">{{ result }}</pre>
+      </div>
     </div>
   </section>
 </template>
@@ -20,6 +21,8 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { AxiosRequestConfig } from "axios";
+import { CounterAPI } from "counterapi";
+
 // import { Button } from "buefy";
 
 let axios = require("axios");
@@ -79,20 +82,21 @@ export default defineComponent({
     };
 
     const run = () => {
+      console.log("asdsd");
       loading.value = true;
       const query = getQueryFromType();
-      axios
-        .get(props.type, {
-          params: query
-        })
+      const counter = new CounterAPI();
+
+      counter
+        .up("APITest")
         .then(function(response) {
-          result.value = response.data;
+          result.value = response;
         })
         .then(() => {
           loading.value = false;
-          setTimeout(function() {
-            result.value = null;
-          }, 8000);
+          // setTimeout(function() {
+          //   result.value = null;
+          // }, 8000);
         });
     };
     return {
