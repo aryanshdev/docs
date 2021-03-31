@@ -1,6 +1,7 @@
 const { description } = require("../../package");
 
 module.exports = {
+  lang: "en-US",
   title: "Counter API",
   description: description,
 
@@ -10,8 +11,8 @@ module.exports = {
       {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/favicons/apple-icon-180x180.png",
-      },
+        href: "/favicons/apple-icon-180x180.png"
+      }
     ],
     [
       "link",
@@ -19,8 +20,8 @@ module.exports = {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/favicons/favicon-32x32.png",
-      },
+        href: "/favicons/favicon-32x32.png"
+      }
     ],
     [
       "link",
@@ -28,24 +29,24 @@ module.exports = {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "/favicons/favicon-16x16.png",
-      },
+        href: "/favicons/favicon-16x16.png"
+      }
     ],
     ["link", { rel: "shortcut icon", href: "/favicons/favicon.ico" }],
     ["meta", { name: "theme-color", content: "#0842ba" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
       "meta",
-      { name: "apple-mobile-web-app-status-bar-style", content: "black" },
-    ],
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" }
+    ]
   ],
   sassOptions: { indentedSyntax: true },
   css: {
     loaderOptions: {
       sass: {
-        additionalData: `@import "~@/styles/main.scss"`,
-      },
-    },
+        additionalData: `@import "~@/styles/main.scss"`
+      }
+    }
   },
   dest: "docs",
   themeConfig: {
@@ -56,57 +57,51 @@ module.exports = {
     lastUpdated: false,
     logo: "/img/counterapi-logo.svg",
     author: "omegion",
-    nav: [
+    navbar: [
       {
         text: "Guide",
-        link: "/guide/",
+        link: "/guide/"
       },
       {
         text: "API",
-        link: "/api/",
-      },
+        link: "/api/"
+      }
     ],
     sidebar: [
       {
-        title: "Guide",
-        path: "/guide/",
-        collapsable: false,
-        sidebarDepth: 1, // optional, defaults to 1
-        children: ["/guide/", "/guide/get-started"],
+        isGroup: true,
+        text: "Guide",
+        link: "/guide/",
+        children: ["/guide/get-started.md"]
       },
       {
-        title: "Javascript",
-        path: "/javascript/",
-        collapsable: false,
-        sidebarDepth: 1,
+        isGroup: true,
+        text: "Javascript",
+        link: "/javascript/",
         children: [
-          "/javascript/",
-          "/javascript/get-started",
-          "/javascript/quick-start",
-          "/javascript/counter-name-hashing",
-          "/javascript/count-list",
-        ],
+          "/javascript/get-started.md",
+          "/javascript/quick-start.md",
+          "/javascript/counter-name-hashing.md",
+          "/javascript/count-list.md"
+        ]
       },
       {
-        title: "Go",
-        path: "/go/",
-        collapsable: false,
-        sidebarDepth: 1,
+        isGroup: true,
+        text: "Go",
+        link: "/go/",
         children: [
-          "/go/",
-          "/go/get-started",
-          "/go/quick-start",
-          "/go/counter-name",
-        ],
+          "/go/get-started.md",
+          "/go/quick-start.md",
+          "/go/counter-name.md"
+        ]
       },
       {
-        title: "API",
-        path: "/api/",
-        collapsable: false,
-        sidebarDepth: 1,
-        children: ["/api/", "/api/rate-limit", "/api/endpoints"],
-      },
-    ],
+        isGroup: true,
+        text: "API",
+        link: "/api/",
+        children: ["/api/rate-limit.md", "/api/endpoints.md"]
+      }
+    ]
   },
 
   /**
@@ -119,18 +114,18 @@ module.exports = {
     "sitemap",
     {
       hostname: "https://counterapi.dev",
-      outFile: "docs/sitemap.xml",
+      outFile: "docs/sitemap.xml"
     },
     "seo",
     {
       siteTitle: (_, $site) => $site.title,
-      title: ($page) => $page.title,
-      description: ($page) => $page.frontmatter.description,
+      title: $page => $page.title,
+      description: $page => $page.frontmatter.description,
       author: (_, $site) => $site.themeConfig.author,
-      tags: ($page) => $page.frontmatter.tags,
-      twitterCard: (_) => "summary_large_image",
-      type: ($page) =>
-        ["articles", "posts", "blog"].some((folder) =>
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => "summary_large_image",
+      type: $page =>
+        ["articles", "posts", "blog"].some(folder =>
           $page.regularPath.startsWith("/" + folder)
         )
           ? "article"
@@ -141,9 +136,9 @@ module.exports = {
         (($site.themeConfig.domain &&
           !$page.frontmatter.image.startsWith("http")) ||
           "") + $page.frontmatter.image,
-      publishedAt: ($page) =>
+      publishedAt: $page =>
         $page.frontmatter.date && new Date($page.frontmatter.date),
-      modifiedAt: ($page) => $page.lastUpdated && new Date($page.lastUpdated),
-    },
-  ],
+      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
+    }
+  ]
 };

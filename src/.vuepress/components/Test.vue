@@ -1,18 +1,18 @@
 <template>
   <section>
     <div class="columns is-multiline">
-      <!--      <div class="column is-12">-->
-      <!--        <b-button-->
-      <!--          :loading="loading"-->
-      <!--          class="is-pulled-right is-primary"-->
-      <!--          @click="run"-->
-      <!--          >Run →-->
-      <!--        </b-button>-->
-      <!--      </div>-->
-      <!--      <div v-if="result" class="column is-12 pt-0">-->
-      <!--        <p class="subtitle mb-0">Result</p>-->
-      <!--        <pre class="has-background-white-ter">{{ result }}</pre>-->
-      <!--      </div>-->
+      <div class="column is-12">
+        <b-button
+          :loading="loading"
+          class="is-pulled-right is-primary"
+          @click="run"
+          >Run →
+        </b-button>
+      </div>
+      <div v-if="result" class="column is-12 pt-0">
+        <p class="subtitle mb-0">Result</p>
+        <pre class="has-background-white-ter">{{ result }}</pre>
+      </div>
     </div>
   </section>
 </template>
@@ -20,7 +20,6 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { AxiosRequestConfig } from "axios";
-// import { Button } from "buefy";
 
 let axios = require("axios");
 
@@ -38,15 +37,12 @@ export const apiConfig: AxiosRequestConfig = {
   }
 };
 
-// @ts-ignore
 axios = axios.create(apiConfig);
 
 export default defineComponent({
-  name: "APIRun",
   props: {
     type: String
   },
-  // components: { Button },
   setup(props) {
     const result = ref(null);
     const loading = ref(false);

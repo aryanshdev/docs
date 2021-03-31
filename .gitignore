@@ -13,3 +13,5 @@ basement_dist
 .idea
 yarn.lock
 src/.vuepress/dist*
+.cache
+.temp
