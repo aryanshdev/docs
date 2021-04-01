@@ -20,83 +20,48 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { AxiosRequestConfig } from "axios";
-import { CounterAPI } from "counterapi";
-
-// import { Button } from "buefy";
-
-let axios = require("axios");
-
-const BASE_URL = "https://api.counterapi.dev/v1/";
-
-export const apiConfig: AxiosRequestConfig = {
-  withCredentials: false,
-  timeout: 30000,
-  baseURL: BASE_URL,
-  headers: {
-    common: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    }
-  }
-};
-
-// @ts-ignore
-axios = axios.create(apiConfig);
+import { CounterAPI, CountsQuery, GroupByTypes } from "counterapi";
 
 export default defineComponent({
   name: "APIRun",
   props: {
     type: String
   },
-  // components: { Button },
   setup(props) {
     const result = ref(null);
     const loading = ref(false);
 
     const getQueryFromType = () => {
+      const counter = new CounterAPI();
+      const counterName = "APITest";
+
       switch (props.type) {
         case "up":
-          return {
-            name: "APITest"
-          };
+          return counter.up(counterName);
         case "down":
-          return {
-            name: "APITest"
-          };
+          return counter.down(counterName);
         case "get":
-          return {
-            name: "APITest"
-          };
+          return counter.get(counterName);
         case "set":
-          return {
-            name: "APITest",
-            count: 10
-          };
+          return counter.set(counterName, 10);
         case "counts/":
-          return {
+          const q: CountsQuery = {
             name: "APITest",
-            group_by: "days"
+            group_by: GroupByTypes.Day
           };
+          return counter.counts(q);
       }
     };
 
     const run = () => {
-      console.log("asdsd");
       loading.value = true;
-      const query = getQueryFromType();
-      const counter = new CounterAPI();
-
+      const counter = getQueryFromType();
       counter
-        .up("APITest")
         .then(function(response) {
           result.value = response;
         })
         .then(() => {
           loading.value = false;
-          // setTimeout(function() {
-          //   result.value = null;
-          // }, 8000);
         });
     };
     return {
