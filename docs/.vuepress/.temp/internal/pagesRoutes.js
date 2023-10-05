@@ -1,0 +1,18 @@
+export const pagesRoutes = [
+  ["v-8daa1a0e","/",{"title":""},["/index.md"]],
+  ["v-744497ce","/api/",{"title":"Introduction"},["/api/README.md"]],
+  ["v-43b44169","/api/endpoints.html",{"title":"Endpoints"},[":md"]],
+  ["v-022d1106","/api/rate-limit.html",{"title":"Rate Limit"},[":md"]],
+  ["v-2d0a8eae","/go/",{"title":"Introduction"},["/go/README.md"]],
+  ["v-e14f14a2","/go/counter-name.html",{"title":"Counter Name"},[":md"]],
+  ["v-fd396686","/go/get-started.html",{"title":"Get Started"},[":md"]],
+  ["v-6be89c45","/go/quick-start.html",{"title":"Quick Start with CLI"},[":md"]],
+  ["v-fffb8e28","/guide/",{"title":"Introduction"},["/guide/README.md"]],
+  ["v-5ceabafb","/guide/get-started.html",{"title":"Get Started"},[":md"]],
+  ["v-e02a086e","/javascript/",{"title":"Introduction"},["/javascript/README.md"]],
+  ["v-ca02ee58","/javascript/count-list.html",{"title":"Count List"},[":md"]],
+  ["v-223b340d","/javascript/counter-name-hashing.html",{"title":"Counter Name Hashing"},[":md"]],
+  ["v-0c97b850","/javascript/get-started.html",{"title":"Get Started"},[":md"]],
+  ["v-378d1940","/javascript/quick-start.html",{"title":"Quick Start"},[":md"]],
+  ["v-3706649a","/404.html",{"title":""},[]],
+]
